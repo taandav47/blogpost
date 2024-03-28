@@ -36,6 +36,11 @@ pipeline {
         stage('Deploy to GitHub Pages') {
             steps {
                 script {
+                    // Check if 'blogpost' directory exists
+                    if (fileExists('gh-pages-temp')) {
+                        // Delete 'blogpost' directory if it exists
+                        bat 'rmdir /s /q gh-pages-temp'
+                    }
                     // Ensure temporary directory exists
                     bat 'mkdir gh-pages-temp'
                     bat 'icacls gh-pages-temp /grant Everyone:F /t'
