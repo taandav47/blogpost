@@ -73,7 +73,7 @@ pipeline {
                 // Add, commit, and push to GitHub Pages branch
                 bat 'git add .'
                 bat 'git commit -m "Deploy to GitHub Pages"'
-                bat 'git push origin gh-pages --force'
+                bat 'git push -u origin gh-pages'
 
                 // Clean up temporary files and switch back to main branch
                 bat 'rmdir /s /q gh-pages-temp'
