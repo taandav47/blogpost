@@ -9,7 +9,7 @@ pipeline {
             steps {
                 // Configure Git user name and email
                 script {
-                    bat 'git config --global user.name "rajat"'
+                    bat 'git config --global user.name "taandav47"'
                     bat 'git config --global user.email "acharyarajat1996@gmail.com"'
                 }
             }
