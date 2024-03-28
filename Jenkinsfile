@@ -16,6 +16,9 @@ pipeline {
         }
         stage('Cloning Git') {
             steps {
+                if (fileExists('blogpost')) {
+                    bat 'rmdir /s /q blogpost'
+                }
                 bat 'git clone https://github.com/taandav47/blogpost.git'
             }
         }
