@@ -5,6 +5,15 @@ pipeline {
     }
     agent any
     stages {
+        stage('Configure Git') {
+            steps {
+                // Configure Git user name and email
+                script {
+                    bat 'git config --global user.name "rajat"'
+                    bat 'git config --global user.email "acharyarajat1996@gmail.com"'
+                }
+            }
+        }
         stage('Cloning Git') {
             steps {
                 bat 'git clone https://github.com/taandav47/blogpost.git'
