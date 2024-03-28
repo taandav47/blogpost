@@ -1,13 +1,13 @@
 pipeline {
     environment {
-        imagename = "tandav47/blogpost"
+        imagename = "taandav47/blogpost"
         dockerImage = ''
     }
     agent any
     stages {
         stage('Cloning Git') {
             steps {
-                bat 'git clone https://github.com/tandav47/blogpost.git'
+                bat 'git clone https://github.com/taandav47/blogpost.git'
             }
         }
         stage('Building Next.js project') {
