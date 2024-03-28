@@ -16,10 +16,15 @@ pipeline {
         }
         stage('Cloning Git') {
             steps {
-                if (fileExists('blogpost')) {
-                    bat 'rmdir /s /q blogpost'
+                script {
+                    // Check if 'blogpost' directory exists
+                    if (fileExists('blogpost')) {
+                        // Delete 'blogpost' directory if it exists
+                        bat 'rmdir /s /q blogpost'
+                    }
+                    // Clone the GitHub repository
+                    bat 'git clone https://github.com/taandav47/blogpost.git'
                 }
-                bat 'git clone https://github.com/taandav47/blogpost.git'
             }
         }
         stage('Building Next.js project') {
