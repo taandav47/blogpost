@@ -11,7 +11,7 @@ pipeline {
                     bat 'del /s /q *.*'
                     bat 'rmdir /s /q .git'
                                     // Clone the GitHub repository
-                    bat 'git clone https://github.com/taandav47/blogpost.git .'
+                    bat 'git clone https://github.com/taandav47/blogpost.git'
             }
         }
         stage('Building Next.js project') {
